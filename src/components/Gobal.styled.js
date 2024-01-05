@@ -18,3 +18,7 @@ export const TitleH2 = styled.h2`
 export const TitleH3 = styled.h3`
   text-shadow: #fc0 1px 0 10px;
 `;
+
+export const Wrapper = styled.div`
+  z-index: 1000;
+`;

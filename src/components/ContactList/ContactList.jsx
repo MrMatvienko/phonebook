@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { BtnDelete, Item, StylePar, StyledUl } from './ContactList.styled';
-import { getFilteredContacts } from 'store/selectors';
 import { deleteContacts } from 'store/API';
+import { selectVisibleContacts } from 'store/Contacts/selectors';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getFilteredContacts);
+  const contacts = useSelector(selectVisibleContacts);
   return (
     <div>
       <StyledUl>
