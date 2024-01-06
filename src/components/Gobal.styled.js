@@ -3,10 +3,10 @@ import styled from 'styled-components';
 export const Container = styled('div')`
   text-align: center;
   margin: auto;
-  max-width: 800px;
+  max-width: 1440px;
   background: linear-gradient(#e96874, #6e3663, #95539e);
-  border-radius: 2px;
   box-shadow: 0 6px 12px -3px rgba(0, 0, 0, 0.3);
+  min-height: 100vh;
 `;
 
 export const TitleH1 = styled.h1`

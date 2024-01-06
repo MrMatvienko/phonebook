@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'store/auth/operations';
+import { Button, Form, Input, Label } from './RegisterForm.styled';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -20,10 +21,10 @@ export const RegisterForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
+    <Form onSubmit={handleSubmit} autoComplete="off">
+      <Label>
         Username
-        <input
+        <Input
           type="text"
           name="name"
           placeholder="Введіть ім'я"
@@ -31,10 +32,10 @@ export const RegisterForm = () => {
           title="Ім'я має містити лише літери, апострофи, дефіси та відступи"
           required
         />
-      </label>
-      <label>
+      </Label>
+      <Label>
         Email
-        <input
+        <Input
           type="email"
           name="email"
           placeholder="Введіть адресу електронної пошти"
@@ -42,10 +43,10 @@ export const RegisterForm = () => {
           title="Будь ласка, введіть дійсну адресу електронної пошти"
           required
         />
-      </label>
-      <label>
+      </Label>
+      <Label>
         Password
-        <input
+        <Input
           type="password"
           name="password"
           placeholder="Введіть пароль"
@@ -53,8 +54,8 @@ export const RegisterForm = () => {
           title="Пароль повинен містити тільки латинські літери (як великі, так і малі), цифри та інші символи"
           required
         />
-      </label>
-      <button type="submit">Register</button>
-    </form>
+      </Label>
+      <Button type="submit">Register</Button>
+    </Form>
   );
 };

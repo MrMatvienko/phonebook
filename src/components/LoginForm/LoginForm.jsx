@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { logIn } from 'store/auth/operations';
+import { Button, Form, Input, Label } from './LoginForm.styled';
 
 export const LoginForm = () => {
   const dispatch = useDispatch();
@@ -19,30 +20,28 @@ export const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
-        Email
-        <input
+    <Form onSubmit={handleSubmit} autoComplete="off">
+      <Label>
+        <Input
           type="email"
           name="email"
-          placeholder="Введіть адресу електронної пошти"
-          pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+          placeholder="Email"
+          // pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
           title="Будь ласка, введіть дійсну адресу електронної пошти"
           required
         />
-      </label>
-      <label>
-        Password
-        <input
+      </Label>
+      <Label>
+        <Input
           type="password"
           name="password"
-          placeholder="Введіть пароль"
-          pattern="^[a-zA-Z0-9!@#$%^&*()-_=+`~[\]{}|:<>/?]+$"
+          placeholder="Password"
+          // pattern="^[a-zA-Z0-9!@#$%^&*()-_=+`~[\]{}|:<>/?]+$"
           title="Пароль повинен містити тільки латинські літери (як великі, так і малі), цифри та інші символи"
           required
         />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+      </Label>
+      <Button type="submit">Log In</Button>
+    </Form>
   );
 };

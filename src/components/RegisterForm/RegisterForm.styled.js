@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledForm = styled.form`
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 400px;
@@ -11,23 +11,22 @@ export const StyledForm = styled.form`
   margin: 0 auto;
 `;
 
-export const StyledInput = styled.input`
-  margin-bottom: 5px;
-  border-radius: 10px;
-  border-color: black;
-  padding-left: 20px;
-  height: 20px;
+export const Label = styled.label`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  color: #f08080;
+  font-size: 20px;
+`;
+
+export const Input = styled.input`
   color: #171718;
   padding: 8px 12px;
   font: inherit;
   cursor: pointer;
-  &::placeholder {
-    font-size: 12px;
-    color: black;
-  }
 `;
 
-export const StyledBtn = styled.button`
+export const Button = styled.button`
   padding: 8px 12px;
   font: inherit;
   cursor: pointer;

@@ -11,7 +11,7 @@ import { PrivateRoute } from './PrivateRoute';
 import { useDispatch } from 'react-redux';
 import { useAuth } from 'hooks/useAuth';
 import { refreshUser } from 'store/auth/operations';
-import { Wrapper } from './Gobal.styled';
+import { Container } from './Gobal.styled';
 
 const Home = lazy(() => import('pages/Home'));
 const Register = lazy(() => import('pages/Register'));
@@ -19,16 +19,16 @@ const Login = lazy(() => import('pages/Login'));
 const Contacts = lazy(() => import('pages/Contacts'));
 
 export const App = () => {
-  const dispatch = useDispatch(); // Отримуємо функцію dispatch для відправки дій до Redux store
-  const { isRefreshing } = useAuth(); // Отримуємо стан аутентифікації користувача
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
 
   useEffect(() => {
-    dispatch(refreshUser()); // Викликаємо функцію оновлення користувача при монтажі компонента або зміні dispatch
+    dispatch(refreshUser());
   }, [dispatch]);
   return isRefreshing ? (
-    <p>Оновлення користувача...</p>
+    <p>User update...</p>
   ) : (
-    <Wrapper>
+    <Container>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -55,7 +55,7 @@ export const App = () => {
           />
         </Route>
       </Routes>
-    </Wrapper>
+    </Container>
   );
 };
 

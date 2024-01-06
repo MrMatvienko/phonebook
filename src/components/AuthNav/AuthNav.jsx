@@ -1,14 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link, Wrapper } from './AuthNav.styled';
 
 export const AuthNav = () => {
-  // Компонент AuthNav відповідає за навігаційну панель для неаутентифікованого користувача
-
   return (
-    <div>
-      <Link to="/register">Register</Link>{' '}
-      {/* Посилання на сторінку реєстрації користувача */}
-      <Link to="/login">Log In</Link>{' '}
-      {/* Посилання на сторінку входу користувача */}
-    </div>
+    <Wrapper>
+      <Link to="/register">Register</Link> <Link to="/login">Log In</Link>{' '}
+    </Wrapper>
   );
 };
