@@ -3,8 +3,7 @@ import styled from 'styled-components';
 export const Container = styled('div')`
   text-align: center;
   margin: auto;
-  max-width: 1440px;
-  background: linear-gradient(#e96874, #6e3663, #95539e);
+  background: linear-gradient(#e96870, #6e3663, #95539e);
   box-shadow: 0 6px 12px -3px rgba(0, 0, 0, 0.3);
   min-height: 100vh;
 `;
