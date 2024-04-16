@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-
+import img from './assets/phonebooks.jpeg';
 export const Container = styled('div')`
   text-align: center;
   margin: auto;
-  background: linear-gradient(#e96870, #6e3663, #95539e);
+  background: url(${img}) 50% no-repeat #ffff;
   box-shadow: 0 6px 12px -3px rgba(0, 0, 0, 0.3);
   min-height: 100vh;
 `;
