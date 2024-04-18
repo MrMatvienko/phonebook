@@ -3,7 +3,8 @@ import img from './assets/phonebooks.jpeg';
 export const Container = styled('div')`
   text-align: center;
   margin: auto;
-  background: url(${img}) 50% no-repeat #ffff;
+  /* background: linear-gradient(rgba(46, 47, 66, 0.1), rgba(48, 47, 80, 0.3)),
+    url(${img}) 50% no-repeat #ffff; */
   box-shadow: 0 6px 12px -3px rgba(0, 0, 0, 0.3);
   min-height: 100vh;
 `;

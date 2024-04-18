@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'store/API';
 import { selectIsLoading } from 'store/auth/selectors';
-
+import { Wraper } from './Contacts.styled';
 export default function Tasks() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
@@ -15,12 +15,11 @@ export default function Tasks() {
   }, [dispatch]);
 
   return (
-    <>
-      <title>Your contacts</title>
+    <Wraper>
       <ContactForm /> {/* Компонент форми для додавання контакту */}
       <div>{isLoading && <Loader />}</div>{' '}
       {/* Відображення повідомлення про виконання запиту */}
       <ContactList /> {/* Компонент для відображення списку контактів */}
-    </>
+    </Wraper>
   );
 }
