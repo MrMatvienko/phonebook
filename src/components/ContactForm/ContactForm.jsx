@@ -1,6 +1,11 @@
 import { nanoid } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
-import { StyledBtn, StyledForm, StyledInput } from './ContactForm.styled';
+import {
+  StyledBtn,
+  StyledForm,
+  StyledInput,
+  Wrapper,
+} from './ContactForm.styled';
 import { addContacts } from 'store/API';
 
 export const ContactForm = () => {
@@ -20,10 +25,12 @@ export const ContactForm = () => {
   };
 
   return (
-    <StyledForm onSubmit={handleSubmit}>
-      <StyledInput type="text" name="name" placeholder="Name" required />
-      <StyledInput type="tel" name="number" placeholder="Number" required />
-      <StyledBtn type="submit">Add Contacts</StyledBtn>
-    </StyledForm>
+    <Wrapper>
+      <StyledForm onSubmit={handleSubmit}>
+        <StyledInput type="text" name="name" placeholder="Name" required />
+        <StyledInput type="tel" name="number" placeholder="Number" required />
+        <StyledBtn type="submit">Add Contacts</StyledBtn>
+      </StyledForm>
+    </Wrapper>
   );
 };

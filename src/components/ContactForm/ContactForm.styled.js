@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const Wrapper = styled.div`
+  padding-top: 100px;
+`;
+
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -38,7 +42,7 @@ export const StyledBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-
+  transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
     background-color: #b9bcd3;
   }
