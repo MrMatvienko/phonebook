@@ -1,11 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
 import {
+  AddText,
   BtnDelete,
   Item,
+  SearchInput,
   StylePar,
   StyledUl,
   Text,
-  Title,
+  Wrapper,
 } from './ContactList.styled';
 import { deleteContacts } from 'store/API';
 import { selectVisibleContacts } from 'store/Contacts/selectors';
@@ -15,21 +17,27 @@ export const ContactList = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectVisibleContacts);
   return (
-    <div>
-      <Title>Contacts</Title>
-      <Text>Find contacts by name</Text>
-      <Filter />
-      <StyledUl>
-        {contacts.map(contact => (
-          <Item key={contact.id}>
-            <StylePar>{contact.name}</StylePar>
-            <StylePar>{contact.number}</StylePar>
-            <BtnDelete onClick={() => dispatch(deleteContacts(contact.id))}>
-              Delete
-            </BtnDelete>
-          </Item>
-        ))}
-      </StyledUl>
-    </div>
+    <Wrapper>
+      <SearchInput>
+        <Text>Find contacts by name</Text>
+        <Filter />
+      </SearchInput>
+
+      {contacts.length === 0 ? (
+        <AddText>Add contacts please...</AddText>
+      ) : (
+        <StyledUl>
+          {contacts.map(contact => (
+            <Item key={contact.id}>
+              <StylePar>{contact.name}</StylePar>
+              <StylePar>{contact.number}</StylePar>
+              <BtnDelete onClick={() => dispatch(deleteContacts(contact.id))}>
+                Delete
+              </BtnDelete>
+            </Item>
+          ))}
+        </StyledUl>
+      )}
+    </Wrapper>
   );
 };

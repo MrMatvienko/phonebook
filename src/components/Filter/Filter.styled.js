@@ -4,11 +4,11 @@ export const SearchInput = styled.input`
   width: 300px;
   margin-bottom: 5px;
   border-radius: 10px;
-  border-color: black;
   padding-left: 20px;
   height: 20px;
   color: #171718;
   padding: 8px 12px;
+  border: none;
   font: inherit;
   cursor: pointer;
   &::placeholder {

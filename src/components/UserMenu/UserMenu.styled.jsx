@@ -17,16 +17,18 @@ export const Button = styled.button`
   padding: 4px 6px;
   font: inherit;
   cursor: pointer;
-  border-radius: 4px 8px;
-  border: 3px solid #000000;
-  color: #2719a7;
+  border-radius: 10px;
+  border: 2px solid #000000;
+  color: #000000;
   font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 10px 10px;
-
+  transition: color, background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
     background-color: #b9bcd3;
+    color: #ce1f1f;
+    border: 2px solid #ce1f1f;
   }
 `;
